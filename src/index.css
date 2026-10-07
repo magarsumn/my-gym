@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #121212;
+  --color-charcoal: #181817;
+  --color-charcoal-light: #1e1d1b;
+  --color-charcoal-lighter: #2a2926;
+  --color-off-white: #f4f1ea;
+  --color-bone: #b9b2a4;
+  --color-accent: #c85a32;
+  --color-accent-bright: #de7248;
+  --color-accent-dim: #8f3f21;
+
+  --animate-marquee: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Translucent nav/menu → near-solid, blur dropped, when the OS asks for less transparency */
+@media (prefers-reduced-transparency: reduce) {
+  .backdrop-blur-lg,
+  .backdrop-blur-xl {
+    background-color: var(--color-ink) !important;
+    backdrop-filter: none !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .border-white\/10,
+  .border-white\/15 {
+    border-color: var(--color-off-white) !important;
+  }
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-off-white);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-ink);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-charcoal-lighter);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-dim);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
