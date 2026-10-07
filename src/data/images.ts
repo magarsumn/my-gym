@@ -2,7 +2,7 @@
 // Swap any URL here to re-skin the site without touching components.
 
 export const images = {
-  hero: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2400&auto=format&fit=crop",
+  hero: "/hero.jpg",
 
   about: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2000&auto=format&fit=crop",
 
